@@ -11,6 +11,6 @@ package br.com.utfpr.java.olamundo;
 public class OlaMundo {
 
     public static void main(String[] args) {
-        System.out.println("Hello World um teste!");
+        System.out.println("Hello World um teste3!");
     }
 }
