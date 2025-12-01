@@ -1,5 +1,6 @@
 package br.com.ativ05interface;
 
+
 import java.util.Scanner;
 
 public class Teste {
