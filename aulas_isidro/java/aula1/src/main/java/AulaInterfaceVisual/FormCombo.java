@@ -32,6 +32,10 @@ public class FormCombo extends javax.swing.JFrame {
         cmbProdutos = new javax.swing.JComboBox<>();
         lblProdutoSelecionado = new javax.swing.JLabel();
         txtProdutoSelecionado = new javax.swing.JTextField();
+        lblNovoProduto = new javax.swing.JLabel();
+        txtNovoProduto = new javax.swing.JTextField();
+        btnExcluir = new javax.swing.JButton();
+        btnSalvar1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -50,38 +54,88 @@ public class FormCombo extends javax.swing.JFrame {
         lblProdutoSelecionado.setText("Produto Selecionado:");
 
         txtProdutoSelecionado.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        txtProdutoSelecionado.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtProdutoSelecionadoActionPerformed(evt);
+            }
+        });
+
+        lblNovoProduto.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        lblNovoProduto.setText("Novo Produto:");
+
+        txtNovoProduto.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        txtNovoProduto.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtNovoProdutoActionPerformed(evt);
+            }
+        });
+
+        btnExcluir.setText("Excluir");
+        btnExcluir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnExcluirActionPerformed(evt);
+            }
+        });
+
+        btnSalvar1.setText("Salvar");
+        btnSalvar1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSalvar1ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGap(150, 150, 150)
+                .addComponent(lblTituloTrabalhoComCombobox)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(20, 20, 20)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(lblProdutoSelecionado, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(txtProdutoSelecionado, javax.swing.GroupLayout.PREFERRED_SIZE, 308, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(cmbProdutos, javax.swing.GroupLayout.PREFERRED_SIZE, 471, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(lblProdutoSelecionado, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(txtProdutoSelecionado))
+                    .addComponent(cmbProdutos, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(150, 150, 150)
-                        .addComponent(lblTituloTrabalhoComCombobox)))
-                .addContainerGap(23, Short.MAX_VALUE))
+                        .addComponent(lblNovoProduto, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(txtNovoProduto, javax.swing.GroupLayout.PREFERRED_SIZE, 308, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 43, Short.MAX_VALUE)
+                .addComponent(btnExcluir)
+                .addContainerGap())
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                    .addContainerGap(480, Short.MAX_VALUE)
+                    .addComponent(btnSalvar1)
+                    .addGap(10, 10, 10)))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(19, 19, 19)
                 .addComponent(lblTituloTrabalhoComCombobox)
-                .addGap(38, 38, 38)
-                .addComponent(cmbProdutos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(26, 26, 26)
+                .addGap(30, 30, 30)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblProdutoSelecionado)
-                    .addComponent(txtProdutoSelecionado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(56, Short.MAX_VALUE))
+                    .addComponent(txtNovoProduto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblNovoProduto))
+                .addGap(55, 55, 55)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(cmbProdutos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnExcluir))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 77, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(txtProdutoSelecionado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblProdutoSelecionado))
+                .addGap(37, 37, 37))
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createSequentialGroup()
+                    .addGap(82, 82, 82)
+                    .addComponent(btnSalvar1)
+                    .addContainerGap(219, Short.MAX_VALUE)))
         );
 
         pack();
@@ -92,6 +146,28 @@ public class FormCombo extends javax.swing.JFrame {
         String produtoSelecionado = cmbProdutos.getSelectedItem().toString();
         txtProdutoSelecionado.setText(produtoSelecionado);
     }//GEN-LAST:event_cmbProdutosActionPerformed
+
+    private void txtProdutoSelecionadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtProdutoSelecionadoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtProdutoSelecionadoActionPerformed
+
+    private void txtNovoProdutoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNovoProdutoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtNovoProdutoActionPerformed
+
+    private void btnExcluirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnExcluirActionPerformed
+        // TODO add your handling code here:
+        String produtoSelecionado = cmbProdutos.getSelectedItem().toString();
+        cmbProdutos.removeItem(produtoSelecionado);
+
+    }//GEN-LAST:event_btnExcluirActionPerformed
+
+    private void btnSalvar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalvar1ActionPerformed
+        // TODO add your handling code here:
+        String novoProduto = txtNovoProduto.getText();
+        cmbProdutos.addItem(novoProduto);
+        txtNovoProduto.setText("");
+    }//GEN-LAST:event_btnSalvar1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -119,9 +195,13 @@ public class FormCombo extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnExcluir;
+    private javax.swing.JButton btnSalvar1;
     private javax.swing.JComboBox<String> cmbProdutos;
+    private javax.swing.JLabel lblNovoProduto;
     private javax.swing.JLabel lblProdutoSelecionado;
     private javax.swing.JLabel lblTituloTrabalhoComCombobox;
+    private javax.swing.JTextField txtNovoProduto;
     private javax.swing.JTextField txtProdutoSelecionado;
     // End of variables declaration//GEN-END:variables
 }
